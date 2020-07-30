@@ -1,6 +1,6 @@
 ## About HomeBrewedPoker
 
-HomeBrewedPoker is a free, open source Poker framework.
+HomeBrewedPoker is a free, open source Poker framework for .NET Core.
 Founded and maintained by [Bruce Hunter].
 
 ## Build
