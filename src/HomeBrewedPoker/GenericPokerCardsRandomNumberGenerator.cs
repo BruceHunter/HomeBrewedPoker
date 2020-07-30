@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace HomeBrewedPoker
 {
     /// <summary>
-    /// A very basic ramdom number generator implementation of <see cref="HomeBrewedPoker.IRandomNumberGenerator"/>.
+    /// A very basic ramdom number generator implementation of <see cref="HomeBrewedPoker.Interfaces.IRandomNumberGenerator"/>.
     /// </summary>
     public class GenericPokerCardsRandomNumberGenerator : IRandomNumberGenerator
     {

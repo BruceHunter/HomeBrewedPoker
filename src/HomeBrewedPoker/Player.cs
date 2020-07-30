@@ -22,7 +22,7 @@ namespace HomeBrewedPoker
         public IHand Hand { get; set; }
 
         /// <summary>
-        /// 
+        /// Poker Player Constructor
         /// </summary>
         /// <param name="id">Poker player identifier.</param>
         /// <param name="hand">Poker player poker hand.</param>
