@@ -1,5 +1,12 @@
-# Homebrewed-Poker-Library-Core
-The goal is to create a simple poker library for (.Net Standard)
+## About HomeBrewedPoker
 
-![.NET Core](https://github.com/BruceHunter/HomeBrewed-Poker-Library-Core/workflows/.NET%20Core/badge.svg)
+HomeBrewedPoker is a free, open source Poker framework.
+Founded and maintained by [Bruce Hunter].
 
+## Build
+![.NET Core](https://github.com/BruceHunter/HomeBrewedPoker/workflows/.NET%20Core/badge.svg?branch=master)
+
+## Development Information
+* All development should follow Test Driven Development (TDD).
+* The current implementation contains most, but not all required items to build a poker game. 
+(One thing that is missing is the poker hand comparison/ranking/winner logic)
