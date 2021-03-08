@@ -3,7 +3,7 @@ name: "Deploy to NuGet"
 on: ["push"]
 
 env:
-  PROJECT_PATH: 'src/HomeBrewedPoker/HomeBrewedPoker.csproj'
+  #PROJECT_PATH: 'src/HomeBrewedPoker/HomeBrewedPoker.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
   NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
 
@@ -11,6 +11,7 @@ jobs:
   deploy:
     name: 'Deploy'
     runs-on: 'windows-latest'
+
     steps:
     - name: 'Checkout'
       uses: actions/checkout@v2
@@ -18,16 +19,19 @@ jobs:
     - name: 'Install dotnet'
       uses: actions/setup-dotnet@v1
       with:
-        doetnet-version: '5.0.x'
+        doetnet-version: 5.0.x
     
     - name: 'Restore packages'
-      run: dotnet restore ${{ env.PROJECT_PATH }}
+      #run: dotnet restore ${{ env.PROJECT_PATH }}
+      run: dotnet restore
 
     - name: 'Build project'
-      run: dotnet build ${{ env.PROJECT_PATH }} --non-restore --configuration Release
+      #run: dotnet build ${{ env.PROJECT_PATH }} --non-restore --configuration Release
+      run: dotnet build --non-restore --configuration Release
 
     - name: 'Pack project'
-      run: dotnet pack ${{ env.PROJECT_PATH }} --non-restore --configuration Release --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+      #run: dotnet pack ${{ env.PROJECT_PATH }} --non-restore --configuration Release --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+      run: dotnet pack --non-restore --configuration Release --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
     - name: 'Push package'
       run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s ${{ env.NUGET_SOURCE_URL }}
