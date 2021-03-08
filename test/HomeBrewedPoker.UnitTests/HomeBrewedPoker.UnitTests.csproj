@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Authors>Bruce Hunter</Authors>
+    <Authors>Bruce Hunter Jr.</Authors>
     <Company></Company>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Product>HomeBrewedPoker</Product>
     <PackageProjectUrl></PackageProjectUrl>
-    <Copyright>Copyright (c) Bruce Hunter. All rights reserved.</Copyright>
+    <Copyright>Copyright (c) Bruce Hunter Jr. All rights reserved.</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Description>Simple poker library - UnitTests</Description>
+    <Description>Free, open source Poker framework.</Description>
     <RepositoryUrl>https://github.com/BruceHunter/HomeBrewedPoker</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Version>1.0.0.0</Version>
