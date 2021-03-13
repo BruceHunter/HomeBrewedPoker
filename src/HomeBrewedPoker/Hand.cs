@@ -1,4 +1,4 @@
-﻿// Copyright (c) Bruce Hunter. All rights reserved.
+﻿// Copyright (c) Bruce Hunter Jr. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 using HomeBrewedPoker.Interfaces;
@@ -9,7 +9,7 @@ namespace HomeBrewedPoker
     /// <summary>
     /// Represents a hand of poker cards.
     /// </summary>
-    public class Hand: IHand
+    public class Hand : IHand
     {
         /// <summary>
         /// Poker cards for the hand.
