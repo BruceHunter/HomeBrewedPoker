@@ -17,6 +17,17 @@ namespace HomeBrewedPoker
         public virtual CardType Type { get; set; }
 
         /// <summary>
+        /// ToString
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Type: " + Enum.GetName(typeof(CardType), Type) + "," +
+                   " Rank: " + GetRank().ToString() + "," +
+                   " Suit: " + GetSuit().ToString();
+        }
+
+        /// <summary>
         /// Card constructor.
         /// </summary>
         /// <param name="cardType">The card type.</param>
@@ -132,6 +143,56 @@ namespace HomeBrewedPoker
             }
 
             throw new Exception("Unable to determine card suit type.");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool Equals(ICard obj)
+        {
+            if (obj == null) return false;
+            Card objAsPart = obj as Card;
+            if (objAsPart == null) return false;
+            else return Equals(objAsPart);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name1"></param>
+        /// <param name="name2"></param>
+        /// <returns></returns>
+        public int SortByNameAscending(string name1, string name2)
+        {
+
+            return name1.CompareTo(name2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="comparePart"></param>
+        /// <returns></returns>
+        // Default comparer for Part type.
+        public int CompareTo(ICard comparePart)
+        {
+            // A null value means that this object is greater.
+            if (comparePart == null)
+                return 1;
+
+            else
+                return this.Type.CompareTo(comparePart.Type);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return (int)this.Type;
         }
     }
 }
